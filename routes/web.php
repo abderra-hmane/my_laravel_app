@@ -11,12 +11,11 @@ Route::controller(ThemeController::class)->name('theme.')->group(function () {
     Route::get('/category', 'category')->name('category');
     Route::get('/contact', 'contact')->name('contact');
     Route::get('/blogs', 'blogs')->name('blogs');
-    Route::get('/register', 'register')->name('register');
-    Route::get('/login', 'login')->name('login');
 });
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
